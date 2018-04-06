@@ -61,12 +61,14 @@ class RoomTest < MiniTest::Test
   def test_room_has_guests_favourite_song__song_in_room()
     @room1.add_guests_to_room(@guest1)
     @room1.add_songs_to_room(@song1)
+    @room1.add_songs_to_room(@song2)
     assert_equal("Whoo! We have your favourite song", @room1.favourite_song(@guest1.fav_song))
   end
 
   def test_room_has_guests_favourite_song__song_not_in_room()
     @room1.add_guests_to_room(@guest2)
     @room1.add_songs_to_room(@song2)
+    @room1.add_songs_to_room(@song1)
     assert_equal("Boooo", @room1.favourite_song(@guest2.fav_song))
   end
 end

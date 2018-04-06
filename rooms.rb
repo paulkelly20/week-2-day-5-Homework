@@ -44,7 +44,7 @@ class Room
   # end
 
   def favourite_song(song)
-    songs_in_room =  @songs.map {|song| song.title} ###
+    songs_in_room =  @songs.map {|song| song.title} ### loops over @songs and puts titles in array
       if songs_in_room.include?(song)
         return "Whoo! We have your favourite song"
       else return "Boooo"
