@@ -1,3 +1,4 @@
+require 'pry'
 class Room
   attr_reader :name, :capacity
 
@@ -21,8 +22,6 @@ class Room
   def remove_guest_from_room()
     @guests.pop()
     return checking_guests_in_room()
-
-
   end
 
   def checking_songs_in_room()
@@ -33,5 +32,22 @@ class Room
     @songs << song
   end
 
+  # def favourite_song(song)
+  #   title = []
+  #   for title in @song
+  #     if title.include?(song)
+  #
+  #     return "Whoo! We have your favourite song"
+  #     else return "Boooo"
+  #     end
+  #   end
+  # end
 
+  def favourite_song(song)
+    songs_in_room =  @songs.map {|song| song.title} ###
+      if songs_in_room.include?(song)
+        return "Whoo! We have your favourite song"
+      else return "Boooo"
+      end
+    end
 end

@@ -3,19 +3,20 @@ require_relative("../guests")
 
 class GuestTest < MiniTest::Test
   def setup
-    @customer1 = Guest.new("Billy", 100.0)
-    @customer2 = Guest.new("Davie", 50.0)
-    @customer3 = Guest.new("Stevie", 20.0)
+    @guest1 = Guest.new("Billy", 100.0, "Wonderwall")
+    @guest2 = Guest.new("Davie", 50.0, "Hey Jude")
+    @guest3 = Guest.new("Stevie", 20.0, "Love me do")
   end
 
-  def test_customer_name()
-    assert_equal("Davie", @customer2.name)
+  def test_guests_name()
+    assert_equal("Davie", @guest2.name)
   end
 
-  def test_customer_wallet_amount()
-    assert_equal(20.0, @customer3.wallet)
+  def test_guests_wallet_amount()
+    assert_equal(20.0, @guest3.wallet)
   end
 
-
-
+  def test_guests_favourite_song()
+    assert_equal("Hey Jude", @guest2.song)
+  end
 end
