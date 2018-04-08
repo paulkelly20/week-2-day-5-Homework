@@ -18,16 +18,16 @@ class KaraokeTest < MiniTest::Test
 
   end
 
-  def test_karaoke_name
-      assert_equal("Codeclan", @karaoke.name)
+  def test_karaoke_name()
+      assert_equal("Codeclan", @karaoke.name())
   end
 
-  def
-  def test_entry_fee
-    assert_equal(10, @karaoke.fee)
+
+  def test_entry_fee()
+    assert_equal(10, @karaoke.fee())
   end
 
-  def test_customer_pays_entry_fee
+  def test_customer_pays_entry_fee__till_goes_up()
     @karaoke.pay_entry_fee(@guest1.wallet)
     assert_equal(110, @karaoke.till())
   end

@@ -10,12 +10,12 @@ class Room
   end
 
   def checking_guests_in_room()
-      return @guests.count()
-    end
+    return @guests.count()
+  end
 
   def add_guests_to_room(guest)
     if checking_guests_in_room() < @capacity
-    @guests << guest
+      @guests << guest
     end
   end
 
@@ -32,22 +32,11 @@ class Room
     @songs << song
   end
 
-  # def favourite_song(song)
-  #   title = []
-  #   for title in @song
-  #     if title.include?(song)
-  #
-  #     return "Whoo! We have your favourite song"
-  #     else return "Boooo"
-  #     end
-  #   end
-  # end
-
   def favourite_song(song)
     songs_in_room =  @songs.map {|song| song.title} ### loops over @songs and puts titles in array
-      if songs_in_room.include?(song)
-        return "Whoo! We have your favourite song"
-      else return "Boooo"
-      end
+    if songs_in_room.include?(song)
+      return "Whoo! We have your favourite song"
+    else return "Boooo"
     end
+  end
 end

@@ -14,6 +14,7 @@ class Karaoke
   def pay_entry_fee(guest_wallet)
      if guest_wallet > @fee
        @till += @fee
+
      end
   end
 
