@@ -7,9 +7,4 @@ class Guest
     @fav_song = fav_song
   end
 
-
-  def guest_buys_from_bar(item)
-    @wallet -= item()
-  end
-
 end
