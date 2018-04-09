@@ -3,6 +3,7 @@ require_relative("../guests")
 require_relative("../songs")
 require_relative("../rooms")
 require_relative("../karaoke")
+require_relative("../bar")
 
 class GuestTest < MiniTest::Test
   def setup
@@ -11,6 +12,7 @@ class GuestTest < MiniTest::Test
     @song3 = Song.new("Wonderwall", "Oasis")
     @room1 = Room.new("Party", 2)
     @room2 = Room.new("Pop", 1)
+    @beer = Bar.new("Beer", 4.0)
     @karaoke = Karaoke.new("Codeclan", 100, 10, @room1, @song1, @guest1)
     @guest1 = Guest.new("Billy", 100.0, "Wonderwall")
     @guest2 = Guest.new("Davie", 50.0, "Hey Jude")
@@ -32,6 +34,15 @@ class GuestTest < MiniTest::Test
   def test_guest_pays_room_fee()
     @guest1.pay_room_entry_fee(@karaoke)
     assert_equal(90, @guest1.wallet)
+  end
+
+  def test_stomach()
+    assert_equal(0, @guest1.getter_for_guest_stomach())
+  end
+
+  def test_buying_item_from_bar()
+    @guest1.buy_from_bar(@beer)
+    assert_equal(1, @guest1.getter_for_guest_stomach)
   end
 
 end
