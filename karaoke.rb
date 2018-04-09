@@ -18,5 +18,4 @@ class Karaoke
      end
   end
 
-
 end

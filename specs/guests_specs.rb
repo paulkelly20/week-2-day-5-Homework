@@ -29,5 +29,9 @@ class GuestTest < MiniTest::Test
     assert_equal("Hey Jude", @guest2.fav_song)
   end
 
+  def test_guest_pays_room_fee()
+    @guest1.pay_room_entry_fee(@karaoke)
+    assert_equal(90, @guest1.wallet)
+  end
 
 end

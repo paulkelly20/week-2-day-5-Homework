@@ -7,8 +7,8 @@ require_relative("../karaoke")
 class KaraokeTest < MiniTest::Test
 
   def setup
-    @guest1 = Guest.new("Billy", 100.0, "Wonderwall")
-    @guest2 = Guest.new("Davie", 50.0, "Hey Jude")
+    @guest1 = Guest.new("Billy", 100, "Wonderwall")
+    @guest2 = Guest.new("Davie", 50, "Hey Jude")
     @song1 = Song.new("Hey Jude", "Beatles")
     @song2 = Song.new("Crashland", "Twin Atlantic")
     @song3 = Song.new("Wonderwall", "Oasis")

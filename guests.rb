@@ -7,4 +7,8 @@ class Guest
     @fav_song = fav_song
   end
 
+  def pay_room_entry_fee(karaoke)
+      @wallet -= karaoke.fee()
+  end
+
 end
