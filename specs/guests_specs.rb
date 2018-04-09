@@ -45,4 +45,9 @@ class GuestTest < MiniTest::Test
     assert_equal(1, @guest1.getter_for_guest_stomach)
   end
 
+  def test_buying_item_from_bar_goes_into_tab()
+    @guest1.buy_from_bar_into_tab(@beer.price)
+    assert_equal(96, @guest1.wallet)
+  end
+
 end

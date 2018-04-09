@@ -3,6 +3,7 @@ require_relative("../rooms")
 require_relative("../songs")
 require_relative("../guests")
 require_relative("../karaoke")
+require_relative("../bar")
 
 class KaraokeTest < MiniTest::Test
 
@@ -14,6 +15,8 @@ class KaraokeTest < MiniTest::Test
     @song3 = Song.new("Wonderwall", "Oasis")
     @room1 = Room.new("Party", 2)
     @room2 = Room.new("Pop", 1)
+    @vodka = Bar.new("Vodka", 4.0)
+    @burger = Bar.new("Burger", 8.0)
     @karaoke = Karaoke.new("Codeclan", 100, 10, @room1, @song1, @guest1)
 
   end
@@ -31,5 +34,11 @@ class KaraokeTest < MiniTest::Test
     @karaoke.pay_entry_fee(@guest1.wallet)
     assert_equal(110, @karaoke.till())
   end
+
+  # def test_bar_tab_for_guest_add_items()
+  #   @guest1.buy_from_bar(@vodka)
+  #   @guest1.buy_from_bar(@burger)
+  #   assert_equal(88, @guest1.wallet())
+  # end
 
 end

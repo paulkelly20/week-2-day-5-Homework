@@ -6,6 +6,7 @@ class Guest
     @wallet = wallet
     @fav_song = fav_song
     @stomach = []
+    @tab = 0
   end
 
   def pay_room_entry_fee(karaoke)
@@ -18,6 +19,11 @@ class Guest
 
   def buy_from_bar(item)
     @stomach << item
+  end
+
+  def buy_from_bar_into_tab(item)
+    @tab += item
+    @wallet -= @tab
   end
 
 end
